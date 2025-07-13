@@ -11,12 +11,14 @@ from typing import Optional
 
 from transformers import AutoTokenizer, PreTrainedTokenizerFast
 from tokenizers_converter.tokenizers.ernie4_5_converter import Ernie45Converter
+from tokenizers_converter.tokenizers.baichuan_converter import BaichuanConverter
 
 
 def get_available_converters():
     """Get available converter list"""
     return {
         "ernie4.5": Ernie45Converter,
+        "baichuan": BaichuanConverter,
     }
 
 
@@ -105,14 +107,17 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  # Convert using HuggingFace model name
+  # Convert Baichuan tokenizer using HuggingFace model name
+  tokenizers-converter convert --pretrained_model_name_or_path baichuan-inc/Baichuan2-7B-Chat --output-path ./output --type baichuan
+  
+  # Convert ERNIE tokenizer using HuggingFace model name
   tokenizers-converter convert --pretrained_model_name_or_path baidu/ernie-4.5-base --output-path ./output --type ernie4.5
   
   # Convert using local path
-  tokenizers-converter convert --pretrained_model_name_or_path ./ernie-4.5-model --output-path ./output --type ernie4.5
+  tokenizers-converter convert --pretrained_model_name_or_path ./baichuan-model --output-path ./output --type baichuan
   
   # Use short arguments
-  tokenizers-converter convert -m bert-base-uncased -o ./output -t ernie4.5 --vocab-size 50000
+  tokenizers-converter convert -m baichuan-inc/Baichuan2-13B-Chat -o ./output -t baichuan --vocab-size 50000
         """
     )
     
