@@ -1,0 +1,27 @@
+[project]
+name = "tokenizers-converter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "John Mai", email = "maiqingqiang@foxmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=4.0.0",
+    "protobuf>=6.31.1",
+    "sentencepiece>=0.2.0",
+    "transformers[torch]>=4.53.2",
+]
+
+[project.scripts]
+tokenizers-converter = "tokenizers_converter:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+]
