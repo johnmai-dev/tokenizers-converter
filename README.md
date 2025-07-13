@@ -2,7 +2,7 @@
 
 ## Overview
 
-`tokenizers-converter` is a command-line tool for converting and validating tokenizers in different formats.
+`tokenizers-converter` is a command-line tool for converting slow tokenizers to their fast tokenizer counterparts.
 
 ## Installation
 
