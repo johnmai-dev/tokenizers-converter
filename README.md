@@ -35,7 +35,8 @@ tokenizers-converter convert -m <model_path> -o <output_path> -t <converter_type
 - `--vocab-size`: Vocabulary size (optional)
 
 **Supported Converter Types:**
-- `ernie4.5` / `ernie-4.5`: ERNIE 4.5 tokenizer converter
+- `ernie4.5`: ERNIE 4.5 tokenizer converter
+- `baichuan`: Baichuan tokenizer converter
 
 **Examples:**
 ```bash
